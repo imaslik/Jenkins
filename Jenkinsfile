@@ -4,7 +4,21 @@ pipeline {
     stage('Print Message') {
       steps {
         echo 'Test Jenkins'
-        retry(count: 2)
+      }
+    }
+
+    stage('Set Temp') {
+      agent {
+        node {
+          label 'ladh2427'
+        }
+
+      }
+      environment {
+        temperature = '25'
+      }
+      steps {
+        build 'actions/SetTemperature'
       }
     }
 
