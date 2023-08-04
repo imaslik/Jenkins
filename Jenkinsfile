@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    node {
-      label 'ladh2427'
-    }
-
-  }
+  agent none
   stages {
     stage('Print Message') {
       steps {
